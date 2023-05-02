@@ -1,0 +1,1 @@
+![](assets\RNASeq_Pipeline_Workflow.png)

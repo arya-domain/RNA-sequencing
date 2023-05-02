@@ -3,11 +3,11 @@ library(apeglm)
 
 # loading count matrix from D:\Research Work\Cancer\Temp_data\all_counts.csv
 
-dat <- read.csv("D:/Arya&Rajul/Normalization/FEATURE_COUNTS.csv", header = TRUE, row.names = 1)
+dat <- read.csv("D:/STAR/FEATURE_COUNTS.csv", header = TRUE, row.names = 1)
 
 # loading colData from D:\Research Work\Cancer\Temp_data\colData.txt
 
-info <- read.table("D:/Arya&Rajul/Normalization/colData.txt", header = TRUE, sep = '\t')
+info <- read.table("D:/STAR/Classification.txt", header = TRUE, sep = '\t')
 
 dds <- DESeqDataSetFromMatrix(dat, info, ~ condition)
 
@@ -20,11 +20,11 @@ ddsDE <- DESeq(dds)
 
 #exporting normalized read counts
 normCounts <- counts(ddsDE, normalized= T)
-write.csv(normCounts, file = "D:/Arya&Rajul/Normalization/normCounts.csv")
+write.csv(normCounts, file = "D:/STAR/DESEQ2_normCounts.csv")
 
 res <- results(ddsDE)
 resOrdered <- res[order(res$padj),]
-write.csv(resOrdered, file = "D:/Arya&Rajul/Normalization/resOrdered.csv")
+write.csv(resOrdered, file = "D:/STAR/FEATURE_COUNTS.csv")
 
 summary(res)
 
@@ -33,7 +33,7 @@ summary(res)
 library (ggplot2)
 library (grid)
 
-deSeqRes <- read.csv("D:/Arya&Rajul/Normalization/resOrdered.csv", row.names = 1)
+deSeqRes <- read.csv("D:/STAR/FEATURE_COUNTS.csv", row.names = 1)
 
 # MA plot for p-value adjusted < 0.05 and padj > 0.05
 deSeqRes$sig <- ifelse(deSeqRes$padj <= 0.05, "yes", "no")
