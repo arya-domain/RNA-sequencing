@@ -4,4 +4,4 @@
 <h3>Detailed Workflow</h3>
 <img src="./assets/RNASeq_Pipeline_Workflow.png" style="margin-right: auto; margin-left: auto;" />
 <h2>File Reading Order -</h2>
-<h3>RNA_STAR_ALGORITHM.ipynb</h3><h3>--></h3><h3>MRmr_Deseq2.ipynb</h3><h3>--></h3><h3>Deseq2.r</h3>
+<h3>RNA_STAR_ALGORITHM.ipynb  -->   MRmr_Deseq2.ipynb  -->  Deseq2.r</h3>
